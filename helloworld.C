@@ -1,71 +1,40 @@
 #include <stdio.h>
 
-//recursiva do movimento da torre	
-void movimentoTorre(int numeroMovimentos){
-	if(numeroMovimentos <= 5){
-		printf("Movimento %d - Direita\n", numeroMovimentos);
-		
-		movimentoTorre(numeroMovimentos + 1);
-	}
-}//<-- Fim da Recursiva	
-
-
-//recursiva do movimento do Bispo
-void movimentoBispo(int numeroMovimentos){
-	if(numeroMovimentos <= 5){
-		printf("Movimento %d - Cima/Direita\n", numeroMovimentos);
-		
-		movimentoBispo(numeroMovimentos + 1);	
-	}
-}//<-- Fim da Recursiva
-
-
-//recursiva do movimento da Rainha
-void movimentoRainha(int numeroMovimentos){
-	if(numeroMovimentos <= 8){
-		printf("Movimento %d - Cima/Direita\n", numeroMovimentos);
-		
-		movimentoRainha(numeroMovimentos + 1);
-	}
-}//<-- Fim da Recursiva
-		
 int main(){
-	
-	int torre = 1;
-	int bispo = 1;
-	int rainha = 1;
-	
-	printf("*Movimentos da Torre*\n\n");
-	movimentoTorre(torre);
-	
-	printf("-----------------------\n");
-	
-	printf("*Movimentos do Bispo*\n\n");
-	movimentoBispo(bispo);
-	
-	printf("-----------------------\n");
 
-	printf("*Movimentos da Rainha*\n\n");
-	movimentoRainha(rainha);
+    //criando a matriz do tabuleiro e do vertos dos navios
+    int tabuleiro[10][10];
+    int navio_horizontal[3] = {3, 3, 3};
+    int navio_vertical[3] = {3, 3, 3};
 
-    printf("-----------------------\n");
+    //for que transforma todos os valores do tabuleiro em 0
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            tabuleiro[i][j] = 0;
+        }
+    }
 
-	printf("*Movimentos do Cavalo*\n\n");
+    //colocando o navio no tabuleiro
+    tabuleiro[6][2] = navio_horizontal[0];
+    tabuleiro[6][3] = navio_horizontal[1];
+    tabuleiro[6][4] = navio_horizontal[2];
 
-    //movimento do cavalo
-    int cavalo = 1;
+    tabuleiro[3][5] = navio_vertical[0];
+    tabuleiro[4][5] = navio_vertical[1];
+    tabuleiro[5][5] = navio_vertical[2];
 
-   do{
-        //for com mais de uma variavel declarada
-		for(int i = 1, j = 3; i <= j; i++, j--){
-			printf("Movimento %d: Cima!\n", i);
-		} 
-		printf("Movimento 3: Direita!\n");
-		cavalo++;
-		
-	}while(cavalo <= 1);
+    //printando o tabuleiro na tela
 
-   printf("\n\n\n");
+    printf("***** BATALHA NAVAL *****\n\n");
 
-	return 0;
-} 
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\n\n");
+
+    return 0;
+}

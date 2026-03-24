@@ -1,10 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <locale.h>
 
 int main(){
-	
-	setlocale(LC_ALL, "Portugues");
 	
 	//criação da matriz e declaração de variaveis
 	int tabuleiro[10][10];
@@ -108,6 +104,13 @@ int main(){
 }
 
 	//print do tabuleiro
+    printf("===========================\n");
+	printf("\n");
+	printf("    ***BATALHA NAVAL***   \n");
+	printf("\n");
+	printf("0 - Agua do Mar\n3 - Navio de Guerra\n ");
+	printf("===========================\n");
+	
 	printf("\n");
 	printf("    ");
 	for(int i = 0; i < 10; i++){

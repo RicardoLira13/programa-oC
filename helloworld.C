@@ -104,14 +104,7 @@ int main(){
 }
 
 	//print do tabuleiro
-    printf("===========================\n");
-	printf("\n");
-	printf("    ***BATALHA NAVAL***   \n");
-	printf("\n");
-	printf("0 - Agua do Mar\n3 - Navio de Guerra\n ");
-	printf("===========================\n");
-	
-	printf("\n");
+    printf("\n");
 	printf("    ");
 	for(int i = 0; i < 10; i++){
 		printf("%d ", i);
